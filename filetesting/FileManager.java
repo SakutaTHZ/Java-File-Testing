@@ -64,12 +64,15 @@ public class FileManager {
         FileReader fr=new FileReader(filename);
         BufferedReader br=new BufferedReader(fr);
         int i,count = 0;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Search letter - ");
+        String finder = scan.nextLine();
         while((i=br.read())!=-1){
-            if((char)i == 'a'){
+            if((char)i == finder.charAt(0)){
                 count++;
             }
         }
-        System.out.println("Number of e - " + count);
+        System.out.println("Number of "+finder.charAt(0)+" - " + count);
         br.close();
         fr.close();
     }
